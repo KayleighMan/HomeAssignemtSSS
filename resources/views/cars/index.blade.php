@@ -62,7 +62,7 @@
                         <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
                       </td>
                     </tr>
-                    @endforeach
+                    @endforeach 
                     @endif
 
                   </tbody>
