@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Manufacturer;
 
 class CarsController extends Controller
 {
     public function index()
     {
         $cars = Car::all();
-        return view('cars.index' , compact ('cars'));
+        $manufacturers = Manufacturer::orderBy('name')->pluck('name','id');
+        return view('cars.index' , compact ('cars', 'manufacturers'));
     }
 
     public function create()
