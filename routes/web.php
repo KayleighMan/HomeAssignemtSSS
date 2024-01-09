@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarsController;
+use App\Http\Controllers\ManufacturersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/cars', [CarsController::class, 'index'])->name('cars.index');
 Route::get('/cars/create', [CarsController::class, 'create'])->name('cars.create');
 
 Route::get('/cars/{id}', [CarsController::class, 'show'])->name('cars.show');
+
+Route::get('/manufacturers', [ManufacturersController::class, 'index'])->name('manufacturers.index');
