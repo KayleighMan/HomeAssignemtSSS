@@ -26,3 +26,5 @@ Route::get('/cars/create', [CarsController::class, 'create'])->name('cars.create
 Route::get('/cars/{id}', [CarsController::class, 'show'])->name('cars.show');
 
 Route::get('/manufacturers', [ManufacturersController::class, 'index'])->name('manufacturers.index');
+
+Route::post('/contacts', [CarsController::class, 'store'])->name('cars.store');

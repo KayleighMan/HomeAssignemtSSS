@@ -24,7 +24,8 @@ class CarsController extends Controller
 
     public function create()
     {
-        return view('cars.create');
+        $manufacturers = Manufacturer::orderBy('name')->pluck('name','id')->prepend('All Manufacturers', '');
+        return view('cars.create', compact('manufacturers'));
     }
 
     public function show($id)
@@ -32,4 +33,10 @@ class CarsController extends Controller
         $car = Car::find($id);
         return view('cars.show', compact('car'));
     }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
+
 }
