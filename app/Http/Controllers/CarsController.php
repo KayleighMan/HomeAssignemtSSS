@@ -42,7 +42,9 @@ class CarsController extends Controller
             'salesperson_email'=> 'required | email',
             'manufacturer_id'=>'required|exists:manufacturers,id'
         ]);
-        dd($request->all());
+        
+        Car::create($request->all());
+        return redirect()->route('cars.index')->with('message', 'A new car has been added');
     }
 
 }

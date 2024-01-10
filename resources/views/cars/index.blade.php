@@ -30,7 +30,9 @@
                   </thead>
                   <tbody>
                     
-
+                    @if($message = session('message'))
+                    <div class = "alert alert-success"> {{ $message }}</div>
+                    @endif
                     @if($cars->count())
                         @foreach ($cars as $index => $car)
                         <tr>
@@ -40,7 +42,7 @@
                       <td>{{$car->salesperson_email}}</td>
                       <td>{{$car->manufacturer->name}}</td>
                       <td width="150">
-                        <a href="show.html" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
+                        <a href="{{route('cars.show', $car->id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
                         <a href="form.html" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
                         <a href="#" class="btn btn-sm btn-circle btn-outline-danger" title="Delete" onclick="confirm('Are you sure?')"><i class="fa fa-times"></i></a>
                       </td>
