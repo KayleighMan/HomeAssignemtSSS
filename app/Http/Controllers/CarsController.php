@@ -71,4 +71,12 @@ class CarsController extends Controller
 
     }
 
+    public function destroy($id)
+    {
+        $car = Car::find($id);
+        $car->delete();
+        return back()->with('message', 'The car has been deleted.');
+
+    }
+
 }
