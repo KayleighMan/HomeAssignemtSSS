@@ -21,10 +21,14 @@ Route::get('/', function () {
 
 Route::get('/cars', [CarsController::class, 'index'])->name('cars.index');
 
+Route::get('/manufacturers', [ManufacturersController::class, 'index'])->name('manufacturers.index');
+
 Route::get('/cars/create', [CarsController::class, 'create'])->name('cars.create');
+
+Route::post('/contacts', [CarsController::class, 'store'])->name('cars.store');
 
 Route::get('/cars/{id}', [CarsController::class, 'show'])->name('cars.show');
 
-Route::get('/manufacturers', [ManufacturersController::class, 'index'])->name('manufacturers.index');
+Route::get('/contacts/{id}/edit', [CarsController::class, 'edit'])->name('cars.edit');
 
-Route::post('/contacts', [CarsController::class, 'store'])->name('cars.store');
+Route::put('/contacts/{id}', [CarsController::class, 'update'])->name('cars.update');
